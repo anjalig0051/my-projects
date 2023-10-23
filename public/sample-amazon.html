@@ -40,7 +40,7 @@
         .carousel-indicators button{
             margin-top: -200px;
         }
-        a{
+        .sign{
             text-decoration: none;
             color: white;
         }
@@ -101,6 +101,25 @@
     .dropdown-item{
         z-index: 1;
     }
+    footer{
+        width: 100%;
+    }
+    ul{
+        list-style: none;
+        text-align: left;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+        color: blue;
+       }
+    .sign:hover{
+        text-decoration: none;
+        color: white;
+    }  
     
     </style>
 </head>
@@ -137,9 +156,9 @@
                 <li><a class="dropdown-item"> <span class="dropdown-item-text"> Help? </span> </a></li>
             </ul>
         </div>
-      <div class="accordian p-3 ">
-      <div> <a href="./amazon-account.html">hello, sign in<br> <b>account & lists</b></a></div>
-      </div>
+      
+
+      <div class="p-3 sign"> <a href="./amazon-account.html" ><span class="sign">hello, sign in<br> </span><span class="sign"><b>account & lists</b></span></a></div>
       <div class="ps-1 pt-3"><span>return <br><b>& order</b></span></div>
       <div class="pt-2 ps-2 fw-bold "><span class="bi bi-cart  "></span>Cart</div>
  </div>
@@ -356,10 +375,65 @@
          </div> 
         </section>
   
-    
+       
+        <footer class="container-fluid text-center">
+            <div class="f1 row  text-white bg-black ">
+               <div class="col text-center"><span> back to top</span></div>
+            </div>
+            <div class="f2 " >
+                <div class="row bg-dark text-white pt-3 d-flex ">  
+                   <div class="col-3 "><ul>
+                    <li> <b>Get to Know Us</b></li>
+                      <li><a href="#"> About Us</a></li>
+                      <li><a href="#"> Careers</a></li>
+                       <li><a href="#">Press Releases</a></li>
+                      <li> <a href="#">Amazon Science</a></li>
+                  </ul>
+                </div>
+                <div class="col">
+                    <ul >
+                        <li><b>Connect with Us</b></li>
+                        <li><a href="#"> Facebook</a></li>
+                        <li> <a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul >
+                       <li> <b>Make Money with Us</b></li>
+                        <li><a href="#">Sell on Amazon</a></li>
+                        <li><a href="#">Sell under Amazon Accelerator</a></li>
+                        <li><a href="#">Protect and Build Your Brand</a></li>
+                        <li><a href="#">Amazon Global Selling</a></li>
+                        <li><a href="#">Become an Affiliate</a></li>
+                        <li><a href="#">Fulfilment by Amazon</a></li>
+                        <li><a href="#">Advertise Your Products</a></li>
+                        <li><a href="#">Amazon Pay on Merchants</a></li>
+                    </ul>
+                </div>
+                <div class="col"> 
+                    <ul >
+                       <li><b> Let Us Help You</b></li>
+                        <li><a href="#">COVID-19 and Amazon</a></li>
+                        <li><a href="#">Your Account</a></li>
+                        <li><a href="#">Returns Centre</a></li>
+                        <li><a href="#">100% Purchase Protection</a></li>
+                        <li><a href="#">Amazon App Download</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+          </footer>  
+            
+
+
+
+
+
+       
         
 
-    <footer class="h-75 bg-black w-100"><div>footer</div></footer>
+    
   
 </body>
 </html>
