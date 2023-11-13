@@ -3,66 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>log in page</title>
+    <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<style>
-body{
-    background-color: rgb(208, 255, 255);
-    display: center;
-    justify-content: center;
-    align-items: center;
-   
-}
-#page{
-    background-color: white;
-    width: 300px;
-    height: 300px;
-    margin-top: 150px;
-    margin-left: 390px;
-    border-radius: 15px;
-}
-
-</style>
-<script>
-    function username(){
-        var username=document.getElementById("txtname").value;
-            var error=document.getElementById("error");
-        if(username=="Anjali"){
-         document.getElementById("password").disabled=false;
-        }
-        else{
-            error.innerHTML="invalid user name".fontcolor('red');
-        }
-    }
-    function password(){
-        var error=document.getElementById("error");
-        var password=document.getElementById("password").value;
-        if(password=="princess") {
-            document.getElementById("login").disabled=false;
-        } 
-        else{
-            error.innerHTML="incorrect password".fontcolor('red')
-        }
-    }
-
-</script>
 </head>
-<body class="container-fluid ">
-   <div id="page" >
-      <div class="title text-center fw-bold fs-4 pt-3">Log in page</div>
-        <div class="subtitles p-4">
-            <dl>
-                <dt>User name</dt>
-                <dd><input type="text" class="w-100 border  border-top-0 border-start-0 border-end-0 form-control"   id="txtname" onblur="username()" ></dd>
-                <dt>password</dt>
-                <dt><input type="password"   class="w-100 border border-top-0 border-start-0 border-end-0  form-control" id="password" disabled onblur="password()"></dt>
-            </dl>
-            <button disabled class="btn btn-primary w-100 mt-3 fs-5" id="login"  onclick="document.location='../index.html'">LOG IN</button>
-        </div>
-        <p id="error"></p>
-
-   </div> 
+<body class="container-fluid">
+   <h2>my profile</h2> 
+   <div>name:Anjali Gajare</div>
+   <div>email id: anjalig0051@gmail.com</div>
+<div>
+    <span>my work</span>:<br>
+   project-1: <a href="./newspaper-temp1.html">news paper templet</a><br>
+   project-2: <a href="./sample-amazon.html">amazon templet</a><br>
+   project-3: <a href="./simple-calculator.html">simple calculator using javascript</a>
+</div>
 </body>
 </html>
