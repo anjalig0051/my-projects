@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kfc online food</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script>
+      function  PlaceOrderClick(){
+        document.getElementById("lblname").innerHTML = document.getElementById("txtname").value;
+        document.getElementById("lblmobile").innerHTML = document.getElementById("txtmobile").value;
+
+        var mealName="";
+        var mealCost = 0;
+         
+        var adOnName= "";
+        var adOnCost =0;
+
+        var imgmeal = document.getElementById("imgmeal");
+        //radios
+
+        var optBurger=document.getElementById("optBurger");
+        var optRoller = document.getElementById("optRoller");
+        var optPeri = document.getElementById("optPeri");
+        var optChickenBuckets =document.getElementById("optChickenBuckets");
+
+        if(optBurger.checked){
+            mealName = optBurger.value;
+            mealCost = 120;
+            imgmeal.src = "https://tse1.mm.bing.net/th?id=OIP.b3K_fDf7DiLsLvRfmsCaogHaE8&pid=Api&P=0&h=180";
+
+        }
+
+        if(optRoller.checked){
+            mealName =optRoller.value;
+            mealCost = 100 ;
+            imgmeal.src="https://tse3.mm.bing.net/th?id=OIF.Fsb%2fdPDnXx%2fC5f%2fQgR%2frLA&pid=Api&P=0&h=180";
+
+        }
+
+        if(optPeri.checked){
+            mealName =optPeri.value;
+            mealCost = 519 ;
+            imgmeal.src=" https://tse1.mm.bing.net/th?id=OIP.usKlgYixPEK1iOm5lAEB5wHaE7&pid=Api&P=0&h=180";
+
+        }
+
+        if(optChickenBuckets.checked){
+            mealName =optChickenBuckets.value;
+            mealCost = 628 ;
+            imgmeal.src="https://tse1.mm.bing.net/th?id=OIP.B-YC8bQA--wWd2jtgdbyGQHaFN&pid=Api&P=0&h=180";
+
+        }
+
+
+        //check box
+        var optWings =document.getElementById("optWings");
+        var optKrusher = document.getElementById("optKrusher");
+        var optSnaks = document.getElementById("optSnaks");
+        var optBoxMeal =document.getElementById("optBoxMeal");
+
+        if(optWings.checked){
+            adOnName += optWings.value + "<br>";
+            adOnCost = 80;
+            mealCost += adOnCost;
+        }
+
+        if(optKrusher.checked){
+            adOnName += optKrusher.value +"<br>";
+            adOnCost = 40;
+            mealCost += adOnCost;
+        }
+
+        if(optSnaks.checked){
+            adOnName += optSnaks.value+"<br>";
+            adOnCost=80;
+            mealCost += adOnCost;
+        }
+
+        
+        if(optBoxMeal.checked){
+            adOnName += optBoxMeal.value+"<br>";
+            adOnCost=189;
+            mealCost += adOnCost;
+        }
+
+        document.getElementById("lblmeal").innerHTML = mealName;
+        document.getElementById("lblAdOn").innerHTML = adOnName ;
+        document.getElementById("lbltotal").innerHTML = mealCost.toLocaleString(`en-in`,{style:`currency`,currency:`INR`});
+        
+
+      }
+
+      function submitClick(){
+        alert('recieved your oder');
+      }
+    </script>
+    <style>
+        .info{
+            height: 200px;
+            width: 100%;
+        }
+        .placeorder{
+            margin-right: 30%;
+            margin-left: 30%;
+        }
+    </style>
+</head>
+<body  class="container-fluid bg-danger text-white">
+    <header>
+        <img src="https://tse1.mm.bing.net/th?id=OIP.O8bjQBB7GLRblMqQInAHIwHaDt&pid=Api&P=0&h=180" width="100%" height="200px">
+    </header>
+    <section>
+        <div class="accordion" id="kfc">
+            <!--custamer details-->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#customer" data-bs-toggle="collapse" class="btn btn-danger w-100 ">customer details</button>
+                    
+                </div>
+                <div class="accordion-collapse p-2 collapse " id="customer" data-bs-parent="#kfc">
+                    <div class="accordion-body">
+                        <dl>
+                            <dt>customer name</dt>
+                            <dd><input type="text" id="txtname" class="form-control"></dd>
+                            <dt>mobile number</dt>
+                            <dd><input type="text" id="txtmobile" class="form-control"></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <!--meal details-->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#meal" data-bs-toggle="collapse" class="btn btn-danger w-100" > select your meal</button>
+                </div>
+                <div class="accordion-collapse collapse" id="meal" data-bs-parent="#kfc">
+                <div class="accordion-body p-2">
+                    <div class="row">
+                        <div class="col text-center">
+                           <img src="https://tse1.mm.bing.net/th?id=OIP.b3K_fDf7DiLsLvRfmsCaogHaE8&pid=Api&P=0&h=180" width="50%">
+                            <div class="mt-2 h3">
+                                <input type="radio" name="meal" value="omg burger" class="form-check-input" id="optBurger">
+                                <span>OMG burger &#8377; 120/-</span>
+                            </div>
+                        </div>
+                        <div class="col text-center">
+                            <img src="https://tse3.mm.bing.net/th?id=OIF.Fsb%2fdPDnXx%2fC5f%2fQgR%2frLA&pid=Api&P=0&h=180" width="50%">
+                            <div class="mt-2 h3">
+                                <input type="radio" name="meal" value="omgroller" class="form-check-input" id="optRoller">
+                                <span>OMG roller &#8377; 100/-</span>
+                            </div>
+                        </div>
+
+                      
+                        <div class="col text-center">
+                            <img src="https://tse1.mm.bing.net/th?id=OIP.usKlgYixPEK1iOm5lAEB5wHaE7&pid=Api&P=0&h=180" width="50%">
+                            <div class="mt-2 h3">
+                                <input type="radio" name="meal" value="omg peri peri" class="form-check-input" id="optPeri">
+                                <span>OMG Peri Peri &#8377; 519/-</span>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <img src="https://tse1.mm.bing.net/th?id=OIP.B-YC8bQA--wWd2jtgdbyGQHaFN&pid=Api&P=0&h=180" width="50%">
+                            <div class="mt-2 h3">
+                                <input type="radio" name="meal" value="omg chicken buckets" class="form-check-input" id="optChickenBuckets">
+                                <span>OMG Chicken Buckets &#8377; 628/-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+ 
+             <!--add ons-->
+             <div class="accordion-item ">
+                <div class="accordiion-header">
+                    <button class="btn btn-danger w-100" data-bs-toggle="collapse" data-bs-target="#AdOn"> Select Ad ON's</button>
+                </div>
+                <div class="accordion-collapse collapse" id="AdOn" data-bs-parent="#kfc">
+                    <div class="accordion-body p-2">
+                        <div class="row fw-bold text-dark fs-3 ">
+                            <div class="col text-center">
+                                <img src="https://tse3.mm.bing.net/th?id=OIP.TT2klWUKp9B2TCnKYbG3YwHaHa&pid=Api&P=0&h=180" width="50%" height="60%">
+                                <div class="mt-2 ">
+                                    <input type="checkbox" class="form-check-input" id="optWings" value="hotwings"><span>Hot Wings &#8377; 80/-</span>
+                                </div>
+                            </div>
+    
+                            
+                            <div class="col text-center">
+                                <img src="https://tse1.mm.bing.net/th?id=OIP.lmKtf8oiupcRvusVJVITxwHaE8&pid=Api&P=0&h=180" width="60%" height="60%">
+                                <div class="mt-2 ">
+                                    <input type="checkbox" class="form-check-input" id="optKrusher" value="krusher"><span >Krusher Brownie &#8377; 40/-</span>
+                                </div>
+                            </div>
+
+                            <div class="col text-center">
+                                <img src="https://tse4.mm.bing.net/th?id=OIP.2VXJHFfUVTuD2zvgmOg7gQAAAA&pid=Api&P=0&h=180" width="60%" height="60%">
+                                <div class="mt-2 ">
+                                    <input type="checkbox" class="form-check-input" id="optSnaks" value="Snaks"><span>Snaks &#8377; 80/-</span>
+                                </div>
+                            </div>
+    
+                            <div class="col text-center">
+                                <img src="https://tse3.mm.bing.net/th?id=OIP.jMzAxkEy-OnvIdIJz5skSAHaHa&pid=Api&P=0&h=180" width="60%">
+                                <div class="mt-2 ">
+                                    <input type="checkbox" class="form-check-input" id="optBoxMeal" value="BoxMeal"><span>Box Meal &#8377; 189/-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            </div>
+            <!--place ORDER-->
+             <button onclick="PlaceOrderClick()" data-bs-target="#bill" data-bs-toggle="modal" class=" placeorder btn btn-warning w-50 mt-2"  >Place Order</button>
+             <div class="modal fade " id="bill">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="text-danger"> Your Bill Summery</h2> 
+                        <button class="btn btn-close " data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body text-dark"> 
+                        <div class="row">
+                            <dl>
+                                <dt>Customer Name</dt>
+                                <dd id="lblname"></dd>
+                                <dt>Mobile</dt>
+                                <dd id="lblmobile"></dd>
+                                <dt>meal</dt>
+                                <dd id="lblmeal"></dd>
+                                <dt>ADON's</dt>
+                                <dd id="lblAdOn"></dd>
+                                <dt>Total Bill </dt>
+                                <dd id="lbltotal"></dd>
+                            </dl>
+                        </div>
+                        <div class="col">
+                            <img id="imgmeal" width="100%">
+                        </div>
+                        <div>
+                            <button class="btn btn-primary">Edit</button>
+                            <button class="btn btn-success"  data-bs-dismiss="modal" onclick="submitClick()">submit</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+             </div>
+       
+            
+
+    </section>
+    <footer >
+            <div class="info">
+
+            </div>
+    </footer>
+  
+   
+</body>
+</html>
