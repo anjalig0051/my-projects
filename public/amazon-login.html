@@ -11,10 +11,31 @@
    a{
     text-decoration: none;
    }
+     
+   .page{
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    
+  }
+
+   @media screen and (max-width: 480px) {
+    body {
+      background-color: white;
+    }
+    .page{
+      width: 100%;
+      border: 2px solid black;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 5px;
+    }
+  }
     </style>
 </head>
 <body class="container-fluid">
-   <div class="border border-2 border-black w-25 p-4 ms-5 mt-3 rounded ">
+   <div class=" page  ">
 
     <div class="h1  fw-bold d-flex justify-space-between" >sign in</div>
      <div class="fw-bold h6 mt-3">Email and mobile phone number</div>
