@@ -8,6 +8,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
+      .page{
+        width: 250px;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        
+      }
       input:valid+span{
         display: none;
       }
@@ -22,10 +29,25 @@
         text-decoration: none;
         color: black;
       }
+
+      @media screen and (max-width: 480px) {
+        body {
+          background-color: white;
+        }
+        .page{
+          width: 100%;
+          border: 2px solid black;
+          border-radius: 5px;
+          padding: 10px;
+          margin: 5px;
+        }
+      }
+
+      
     </style>
 </head>
 <body class="container-fluid ">
-<div class="w-25 border border-black rounded p-3">
+<div class="page">
     <div class="h1 mt-3 fw-bold">Create Account</div>
     <div class="fw-bold  mt-4"> Your name</div>
     <div><input type="text" required class="form-control" ><span>enter your name</span></div>
