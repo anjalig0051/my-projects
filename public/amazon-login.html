@@ -13,12 +13,16 @@
    }
      
    .page{
-    width: 250px;
+    width: 400px;
     border: 2px solid black;
     border-radius: 5px;
     padding: 10px;
-    
+    display: block;
+    justify-content: center;
+    align-items: center;
   }
+ 
+  
 
    @media screen and (max-width: 480px) {
     body {
@@ -30,30 +34,40 @@
       border-radius: 5px;
       padding: 10px;
       margin: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
+
     </style>
+    <script>
+    
+    </script>
 </head>
 <body class="container-fluid">
-   <div class=" page  ">
+ 
+    <div class="page">
 
-    <div class="h1  fw-bold d-flex justify-space-between" >sign in</div>
-     <div class="fw-bold h6 mt-3">Email and mobile phone number</div>
-     <input type=text class="form-control">
-    <div><button class="btn btn-warning w-100 mt-3 ">continue</button></div>
-     <div class="mt-3">By continuing, you agree to Amazon's <a href="#">Conditions of Use and Privacy Notice.</a></div>
-     <details class="mt-4">
-        <summary><a href="#">help?</a></summary>
-        <dl>
-            <dd><a href="#">change password</a></dd>
-            <dd><a href="#">forgot password</a></dd>
-        </dl>
-     </details>
-     <div class="mt-5  border-top border-opacity-50 border-black pt-4 fw-bold">Buying for work?</div>
-     <div> <a href="#">Shop on Amazon Business</a></div>
-       <div><button class="mt-4 border rounded"><a href="./amazon-account.html"  class="text-black ">creat your amazon account</a></button></div>
+      <div class="h1  fw-bold d-flex justify-space-between" >sign in</div>
+       <div class="fw-bold h6 mt-3">Email and mobile phone number</div>
+       <input type=text class="form-control" pattern="/\+91\d{10}/ " onblur="handleBlur()">
+       <p></p>
+      <div><button class="btn btn-warning w-100 mt-3 ">continue</button></div>
+       <div class="mt-3">By continuing, you agree to Amazon's <a href="#">Conditions of Use and Privacy Notice.</a></div>
+       <details class="mt-4">
+          <summary><a href="#">help?</a></summary>
+          <dl>
+              <dd><a href="#">change password</a></dd>
+              <dd><a href="#">forgot password</a></dd>
+          </dl>
+       </details>
+       <div class="mt-5  border-top border-opacity-50 border-black pt-4 fw-bold">Buying for work?</div>
+       <div> <a href="#">Shop on Amazon Business</a></div>
+         <div><button class="mt-4 border rounded"><a href="./amazon-account.html"  class="text-black ">creat your amazon account</a></button></div>
+  
+     </div>
 
-   </div>
    
 
 </body>

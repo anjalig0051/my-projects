@@ -96,6 +96,10 @@
       function submitClick(){
         alert('recieved your oder');
       }
+
+      function editClick(){
+        alert(` edit your oder`);
+      }
     </script>
     <style>
         .info{
@@ -148,7 +152,7 @@
                             </div>
                         </div>
                         <div class="col text-center">
-                            <img src="https://tse3.mm.bing.net/th?id=OIF.Fsb%2fdPDnXx%2fC5f%2fQgR%2frLA&pid=Api&P=0&h=180" width="50%">
+                            <img src="https://tse2.mm.bing.net/th?id=OIP.0QZSe894KUfScJEa6Y_TSAHaEK&pid=Api&P=0&h=180 " width="50%">
                             <div class="mt-2 h3">
                                 <input type="radio" name="meal" value="omgroller" class="form-check-input" id="optRoller">
                                 <span>OMG roller &#8377; 100/-</span>
@@ -245,9 +249,10 @@
                             <img id="imgmeal" width="100%">
                         </div>
                         <div>
-                            <button class="btn btn-primary">Edit</button>
+                            <button class="btn btn-primary" onclick="editClick()" data-bs-target="#bill" data-bs-toggle="modal">Edit</button>
                             <button class="btn btn-success"  data-bs-dismiss="modal" onclick="submitClick()">submit</button>
                         </div>
+                        
                     </div>
                 </div>
                 </div>
