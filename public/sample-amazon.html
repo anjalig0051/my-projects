@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon project</title>
+    <title>www.amazon.in</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+   
     <style>
-              
+      body{
+        background-color: rgb(240, 238, 238);
+      }        
         .h{
      width: 100%;
      height: 50px;
@@ -37,14 +41,18 @@
         button span{
             margin-top: -250px;
         }
-        .carousel-indicators button{
-            margin-top: -200px;
+        #tib{
+            margin-top: -200px;  
         }
-        .sign{
+        
+        .sign {
             text-decoration: none;
             color: white;
         }
-        section {
+        section{
+            height: 1400px;
+        }
+        article {
          display: flex;
         display: grid;
         grid-template-columns: 3fr 3fr 3fr 3fr;
@@ -57,13 +65,13 @@
     .cards{
         display: center;
       justify-content: space-between;
-        height: 450px;
+        height: 430px;
         border:1px solid black;
         padding: 10px;
         background-color: white;
-       margin-top: -400px;
+       margin-top: -450px;
       z-index: 1; 
-        border-radius: 5px;
+      border-radius: 5px;
     }
     .cards2{
        
@@ -73,11 +81,11 @@
         border:1px solid black;
         padding: 10px;
         background-color: white;
-    margin-top: -420px;
+    margin-top: -560px;
       border-radius: 5px;
     }
     .card-title ,.card2-title{
-        font-size: 25px;
+        font-size: 23px;
         font-weight: bold;
     }
     .card-header ,.card2-header{
@@ -91,6 +99,11 @@
    .row img{
     width: 100%;
     margin-left: 1px;
+    height: 100px;
+        }
+        .row p{
+            font-size: 10px;
+            font-weight: bold;
         }
     .card-footer{
         color: rgb(0, 123, 255);
@@ -101,9 +114,34 @@
     .dropdown-item{
         z-index: 1;
     }
+    .last-1{
+        border: 1px solid black;
+        padding: 10px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    .btn-card{
+        width: 250px;
+        border: none;
+        border-radius: 7px;
+        padding: 8px;
+        background-color:rgb(251, 198, 128);
+        cursor: pointer;
+        margin-top: 30px;
+    }
+    .btn-card:hover{
+        background-color:rgb(254, 178, 78) ;
+    }
+    .last-img{
+        margin-top: 10px;
+        height: 290px;
+    }
     
     footer{
         width: 100%;
+    }
+    .f1{
+        padding-left: 350px;
     }
     ul{
         list-style: none;
@@ -122,12 +160,58 @@
         color: white;
         background-color: rgb(94, 90, 90);
     }  
+     .pic-body-card{
+        height: 250px;
+        width: 100%;
+     }
+     
+     .cards3{
+      width: 100%;
+      height: 300px;
+      background-color: white;
+       
+     }
+
+     
+
+     .slide-img-col img{
+        width: 250px;
+        height:200px;
+    }
     
+    #slide-items{
+      
+        height: 350px;
+        width: 100%;
+       
+        border: 1px solid black;
+        background-color: aqua;
+        padding-left: 5px;
+    }
+    .slide-img-row{
+        display: flex;
+        justify-content: center;
+        font-size: 13px;
+    }
+   .offer-btn{
+    height: 20px;
+   }
+   
+    #title{
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+
+    #Nextbanner{
+        margin-top: -300px;
+    }
+   
     </style>
 </head>
 <body class="container-fluid ">
-    <header >
- <div class="h d-flex bg-black position-fixed ">
+    <header id="top">
+ <div class="h d-flex bg-black position-fixed " >
      <div class="h1">amazon.in
         
      </div>
@@ -158,9 +242,9 @@
                 <li><a class="dropdown-item"> <span class="dropdown-item-text"> Help? </span> </a></li>
             </ul>
         </div>
-      
-
+     
       <div class="p-3 sign"> <a href="./amazon-account.html" ><span class="sign">hello, sign in<br> </span><span class="sign"><b>account & lists</b></span></a></div>
+      
       <div class="ps-1 pt-3"><span>return <br><b>& order</b></span></div>
       <div class="pt-2 ps-2 fw-bold "><span class="bi bi-cart  "></span>Cart</div>
  </div>
@@ -183,7 +267,8 @@
     </header>
     
         
-        <main>
+        <main >
+            <!--carosel top-->
     <div class="carousel slide " data-bs-ride="carousel" id="topbanner">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -206,46 +291,49 @@
         </button>
 
 
-        <div  class="carousel-indicators ">
-                   <button class="active" data-bs-slide-to="0" data-bs-target="#topbanner"></button>
-                    <button  data-bs-slide-to="1" data-bs-target="#topbanner"></button>
-                    <button  data-bs-slide-to="2" data-bs-target="#topbanner"></button>
+        <div  class="carousel-indicators " >
+                   <button class="active" data-bs-slide-to="0" data-bs-target="#topbanner"  id="tib"></button>
+                    <button  data-bs-slide-to="1" data-bs-target="#topbanner" id="tib"></button>
+                    <button  data-bs-slide-to="2" data-bs-target="#topbanner" id="tib"></button>
         </div>
     </main>
+    <!--carosel indicator-->
     <section>
+        <article>
+            <!--card row1-->
         <div class="cards">
             <div class="card-header">
               <div class="card-title"> Up to 60% off | Styles for men</div>
             </div>
             <div class="card-body">
              <div class="row">
-              <div><img src="../public/images/dress.jpg"  ><p>clothing</p></div>
-             <div> <img src="../public/images/footweare.jpg"  ><p>footweares</p></div>
+              <div><img src="https://tse1.mm.bing.net/th?id=OIP.E4MUOZTJaLuoPfaNmY3D9QHaDd&pid=Api&P=0&h=180"  ><p> footweares</p></div>
+             <div> <img src="https://tse4.mm.bing.net/th?id=OIP.X253Swzq04_f0ARKgOx_kAHaHa&pid=Api&P=0&h=180"  ><p>clothing</p></div>
              </div>
              <div class="row">
-              <div><img src="../public/images/watchs.jpg" ><p>Watchs</p></div>
+              <div><img src="public/images/watchs.jpg" ><p>Watchs</p></div>
               <div>
-               <img src="../public/images/bags.jpg"   ><p>Bags</p>
+               <img src="public/images/bags.jpg"   ><p>Bags</p>
                 </div>
            </div>
             </div>
             <div class="card-footer">
-             <p>See all offers</p>
+             <p >See all offers</p>
             </div>
           </div> 
           <div class="cards">
            <div class="card-header">
-               <div class="card-title"> Up to 60% off | Styles for men</div>
+               <div class="card-title"> Starting ₹199 | Shoes & handbags</div>
              </div>
              <div class="card-body">
               <div class="row">
-               <div><img src="../public/images/dress.jpg"  ><p>clothing</p></div>
-              <div> <img src="../public/images/footweare.jpg"  ><p>footweares</p></div>
+               <div><img src="https://tse4.mm.bing.net/th?id=OIP.7SeMY3g9G_4NuDeEHBz8DgHaE3&pid=Api&P=0&h=180"  ><p>Sport Shoes</p></div>
+              <div> <img src="https://tse2.mm.bing.net/th?id=OIP.YWLqzwgxHxFZSlDSM1uMtAHaHn&pid=Api&P=0&h=180"  ><p>mens shoes</p></div>
               </div>
               <div class="row">
-               <div><img src="../public/images/watchs.jpg" ><p>Watchs</p></div>
+               <div><img src="https://tse1.mm.bing.net/th?id=OIP.dkvHjXfDIyLygdDs-JaN1wHaHa&pid=Api&P=0&h=180" ><p>womens shoes</p></div>
                <div>
-                <img src="../public/images/bags.jpg"   ><p>Bags</p>
+                <img src="https://tse1.mm.bing.net/th?id=OIP.2TqjSAmIaJ-0sq2gGgrI5wHaGK&pid=Api&P=0&h=180"><p>hand Bags</p>
                  </div>
             </div>
              </div>
@@ -255,17 +343,17 @@
           </div> 
           <div class="cards">
            <div class="card-header">
-               <div class="card-title"> Up to 60% off | Styles for men</div>
+               <div class="card-title">Up to 60% off | Top offers on home...</div>
              </div>
              <div class="card-body">
               <div class="row">
-               <div><img src="../public/images/dress.jpg"  ><p>clothing</p></div>
-              <div> <img src="../public/images/footweare.jpg"  ><p>footweares</p></div>
+               <div><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Jup23/02-Ref-1x._SY116_CB577612800_.jpg"  ><p>Refrigerator</p></div>
+              <div> <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Jup23/01-WM-1x._SY116_CB577612800_.jpg"  ><p class="fs-50">washing maching</p></div>
               </div>
               <div class="row">
-               <div><img src="../public/images/watchs.jpg" ><p>Watchs</p></div>
+               <div><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Jup23/03-AC-1x._SY116_CB577612800_.jpg" ><p>Ac</p></div>
                <div>
-                <img src="../public/images/bags.jpg"   ><p>Bags</p>
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Jup23/04-MWO-1x._SY116_CB577612800_.jpg"   ><p>Microwaves</p>
                  </div>
             </div>
              </div>
@@ -273,61 +361,41 @@
               <p>See all offers</p>
              </div>
           </div> 
-          <div class="cards">
-           <div class="card-header">
-               <div class="card-title"> Up to 60% off | Styles for men</div>
-             </div>
-             <div class="card-body">
-              <div class="row">
-               <div><img src="../public/images/dress.jpg"  ><p>clothing</p></div>
-              <div> <img src="../public/images/footweare.jpg"  ><p>footweares</p></div>
-              </div>
-              <div class="row">
-               <div><img src="../public/images/watchs.jpg" ><p>Watchs</p></div>
-               <div>
-                <img src="../public/images/bags.jpg"   ><p>Bags</p>
-                 </div>
-            </div>
-             </div>
-             <div class="card-footer">
-              <p>See all offers</p>
-             </div>
-          </div> 
+           
        
-   
-          <div class="cards2">
-           <div class="card2-header">
-             <div class="card2-title"> Up to 60% off | Styles for men</div>
-           </div>
-           <div class="card-body">
-            <div class="row">
-             <div><img src="../public/images/dress.jpg"  ><p>clothing</p></div>
-            <div> <img src="../public/images/footweare.jpg"  ><p>footweares</p></div>
+          <div class="cards border border-0" id="card-sign">
+            <div class="last-1">
+             <div class="card-title" style="font-size: 20px;">Sign in for your best experience</div>
+             <button class="btn-card"><a href="./amazon-log-in-page.html">Sign in securely</a></button>
             </div>
-            <div class="row">
-             <div><img src="../public/images/watchs.jpg" ><p>Watchs</p></div>
-             <div>
-              <img src="../public/images/bags.jpg"   ><p>Bags</p>
-               </div>
-          </div>
+            <div class="last-img"><img src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/4759f6c7-495e-4e13-b0e3-97a4c4d5f290.jpg" alt="" width="100%" height="80%"></div>
+         </div>
+          <!--card row 2-->
+        <div class="cards2">
+            <div class="card2-header">
+              <div class="card2-title"> Starting ₹349 | Bestselling headphones</div>
+            </div>
+            <div class="card-body">
+                <a href="https://www.amazon.in/l/1388921031/?_encoding=UTF8&pd_rd_w=no7sx&content-id=amzn1.sym.2ea6e308-46d8-4fe3-98df-6cba18ce401e&pf_rd_p=2ea6e308-46d8-4fe3-98df-6cba18ce401e&pf_rd_r=AVEERRCW436TD6V7PP8S&pd_rd_wg=WOFST&pd_rd_r=20d26dbd-3a9d-44f9-8980-c71363f1797c&ref_=pd_gw_unk"><img class=pic-body-card src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/GW/CC/R01_Headphones_Desktop_Cat_Card_2x._SY608_CB575831742_.jpg"></a>
            </div>
-           <div class="card-footer">
-            <p>See all offers</p>
-           </div>
-         </div> 
+           
+            <div class="card-footer">
+             <p>See all offers</p>
+            </div>
+          </div> 
          <div class="cards2">
           <div class="card2-header">
-              <div class="card2-title"> Up to 60% off | Styles for men</div>
+              <div class="card2-title">Deals on smartphone that suits your budget</div>
             </div>
             <div class="card-body">
              <div class="row">
-              <div><img src="../public/images/dress.jpg"  ><p>clothing</p></div>
-             <div> <img src="../public/images/footweare.jpg"  ><p>footweares</p></div>
+              <div><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/JupiterHCTILESMSO/Curation/D99268497_WLD-Jupiter23-_-MSO_Jupiter1_Desktop_QuadImageCard_372X232_1._SY232_CB577349944_.jpg"  ><p>Budget | under &#8377 10,000</p></div>
+             <div> <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/JupiterHCTILESMSO/Curation/D99268497_WLD-Jupiter23-_-MSO_Jupiter1_Desktop_QuadImageCard_372X232_2._SY232_CB577349944_.jpg"  ><p>Mid range &#8377 10,000 | 25,00</p></div>
              </div>
              <div class="row">
-              <div><img src="../public/images/watchs.jpg" ><p>Watchs</p></div>
+              <div><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wireless/Meghana/MSOP2/D99268497_WLD-Jupiter23-_-MSO_Jupiter1_Desktop_QuadImageCard_372X232_2._SY232_CB574695409_.jpg" ><p>Primium &#8377 25,000 | &#8377 45,000</p></div>
               <div>
-               <img src="../public/images/bags.jpg"   ><p>Bags</p>
+               <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wireless/Meghana/MSOP2/D99268497_WLD-Jupiter23-_-MSO_Jupiter1_Desktop_QuadImageCard_372X232_1._SY232_CB574695409_.jpg"><p>Ultra primium-pro|Above &#8377 45,000</p>
                 </div>
            </div>
             </div>
@@ -337,19 +405,12 @@
          </div> 
          <div class="cards2">
           <div class="card2-header">
-              <div class="card2-title"> Up to 60% off | Styles for men</div>
+              <div class="card2-title">Up to 80% off | Laptops, smartwatches &</div>
             </div>
             <div class="card-body">
-             <div class="row">
-              <div><img src="../public/images/dress.jpg"  ><p>clothing</p></div>
-             <div> <img src="../public/images/footweare.jpg"  ><p>footweares</p></div>
-             </div>
-             <div class="row">
-              <div><img src="../public/images/watchs.jpg" ><p>Watchs</p></div>
-              <div>
-               <img src="../public/images/bags.jpg"   ><p>Bags</p>
-                </div>
-           </div>
+               <div> <img class=pic-body-card src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Scroll/Camera/Topdeal/n/Desktop_CC_2X._SY608_CB575822413_.jpg">
+            </div>
+            
             </div>
             <div class="card-footer">
              <p>See all offers</p>
@@ -357,17 +418,17 @@
          </div> 
          <div class="cards2">
           <div class="card2-header">
-              <div class="card2-title"> Up to 60% off | Styles for men</div>
+              <div class="card2-title">Up to 70% off | Deals on Amazon Brands & more</div>
             </div>
             <div class="card-body">
              <div class="row">
-              <div><img src="../public/images/dress.jpg"  ><p>clothing</p></div>
-             <div> <img src="../public/images/footweare.jpg"  ><p>footweares</p></div>
+              <div><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/Oct/Jupiter23/Gateway/QC_PC_372x232_1_2x._SY232_CB574725583_.jpg"><p>Starting &#8377 139| kichen products</p></div>
+             <div> <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/Oct/Jupiter23/Gateway/QC_PC_372x232_2_2x._SY232_CB574725583_.jpg"  ><p>up to 65% off| lightning & decor</p></div>
              </div>
              <div class="row">
-              <div><img src="../public/images/watchs.jpg" ><p>Watchs</p></div>
+              <div><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/Oct/Jupiter23/Gateway/QC_PC_372x232_3_2x._SY232_CB574725583_.jpg" ><p>starting &#8377 85.| toys & games</p></div>
               <div>
-               <img src="../public/images/bags.jpg"   ><p>Bags</p>
+               <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Symbol/2023/Jupiter23/Gateway/Desktop/QC/New/Ethnic_Desktop_QC_2x._SY232_CB576486737_.jpg"><p>Min 60% off|Festival Collaction</p>
                 </div>
            </div>
             </div>
@@ -375,12 +436,116 @@
              <p>See all offers</p>
             </div>
          </div> 
+        </article>
+        
+           <!--carosel slide -->
+        
+             
+                <div class="carousel slide" data-bs-ride="carousel" id="Nextbanner">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active " id="slide-items">
+                             
+                              <div class="conteiner  ">
+                                <div class="slide-title"><span id="title">Block blaster deals</span>  <span> <a href="#">see all..</a></span></div>
+                                     <div class="slide-img-row row">
+                                        <div class=" slide-img-col col ps-4"> <img src=" https://m.media-amazon.com/images/I/51trWgIqvbL._AC_SY400_.jpg"  class="d-flex ">
+                                            <div><span class="btn btn-danger " id="offer-btn">₹104 and under</span><span class="text-danger" >Great Indian Festival</span></div> 
+                                             <div>  <span> Exciting Offers on Lexton String Light</span></div>
+                                        </div>
+                                         <div class=" slide-img-col col"> <img src="https://m.media-amazon.com/images/I/31N+3b97reL._AC_SY400_.jpg"  class="d-flex ">
+                                             <div><span class="btn btn-danger " id="offer-btn">68% off</span><span class="text-danger" >Great Indian Festival</span></div> 
+                                                <div><span>&#8377 79.00</span><br>  <span> clazkit plastic doori Kichin handy veg... </span></div>
+                                        </div>
+                                        <div class=" slide-img-col col"> <img src="https://m.media-amazon.com/images/I/91MUjc4pF6L._SL1500__AC_SY400_.jpg"  class="d-flex ">
+                                                <div><span class="btn btn-danger " id="offer-btn">&#8377 99</span><span class="text-danger">Great Indian Festival</span></div> 
+                                                <div>  <span> crazy deal on status door mat... </span></div>
+                                         </div>
+                                        <div class=" slide-img-col col"> <img src="https://m.media-amazon.com/images/I/51sTh9UmJwL._AC_SY400_.jpg"  class="d-flex ">
+                                                 <div><span class="btn btn-danger " id="offer-btn">85% off</span><span class="text-danger">Great Indian Festival</span></div> 
+                                                <div><span>&#8377 99.00</span><br>  <span> cockatoo shoe bag for traval & storege </span></div>
+                                        </div>
+                                     </div>
+                              </div>
+                                
+                            </div>
+                            <div class="carousel-item " id="slide-items">
+                                <div class="slide-title"><span id="title">Block blaster deals</span><span> <a href="#">see all..</a></span></div>
+                                <div class=" slide-img-row row">
+                                    <div class="slide-img-col col ps-4"><img src="https://m.media-amazon.com/images/I/71FkmgxzlNL._AC_SY400_.jpg" class="d-flex ">
+                                        <div><span class="btn btn-danger " id="offer-btn">₹359 and under</span><span class="text-danger" >Great Indian Festival</span></div> 
+                                             <div>  <span>Amazing Product For Amazon Brand..</span></div>
+                                    </div>
+                                    <div class=" slide-img-col col"><img src="https://m.media-amazon.com/images/I/510g4yEhgqL.AC_SX250.jpg" class="d-flex "> 
+                                        <div><span class="btn btn-danger " id="offer-btn">90% off</span><span class="text-danger">Great Indian Festival</span></div> 
+                                        <div><span>&#8377 99.00</span><br>  <span> rice light for home decoration </span></div>
+                                    </div>
+                                    <div class="slide-img-col col"><img src="https://m.media-amazon.com/images/I/41GOGnogWWL._AC_SY200_.jpg" class="d-flex "> 
+                                        <div><span class="btn btn-danger " id="offer-btn">84% off</span><span class="text-danger">Great Indian Festival</span></div> 
+                                        <div><span>&#8377 79.00</span><br>  <span> Quace 12 meter decorative 42 warm.. </span></div>
+                                    </div>
+                                    <div class="slide-img-col col"><img src="https://m.media-amazon.com/images/I/61rw-4Q8xcL._AC_SY200_.jpg" class="d-flex "> 
+                                        <div><span class="btn btn-danger " id="offer-btn">₹199</span><span class="text-danger" >Great Indian Festival</span></div> 
+                                        <div>  <span>Best of BSB Home Bedsheets</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" id="slide-items">
+                                <div class="slide-title"><span id="title">Block blaster deals</span>  <span><a href="#">see all..</a></span>
+                            </div>
+                                <div class="slide-img-row row">
+                                    <div class="slide-img-col col ps-4"><img src=" https://m.media-amazon.com/images/I/61sskFEsc0L._AC_SY200_.jpg" class="d-flex "> 
+                                        <div><span class="btn btn-danger " id="offer-btn">₹199</span><span class="text-danger" >Great Indian Festival</span></div> 
+                                        <div>  <span>Best of BSB Home Bedsheets</span></div>
+                                    </div>
+                                    <div class=" slide-img-col col"> <img src=" https://images-eu.ssl-images-amazon.com/images/G/31/img22/AmazonBrands/Deeksha/Tile_372x232_3b._SY232_CB598133718_.jpg" class="d-flex ">
+                                        <div><span class="btn btn-danger " id="offer-btn">₹359 and under</span><span class="text-danger" >Great Indian Festival</span></div> 
+                                             <div>  <span>Amazing Product For Amazon Brand..</span></div>
+                                    
+                                    </div>
+                                    <div class="slide-img-col col"><img src=" https://m.media-amazon.com/images/I/41GOGnogWWL._AC_SY200_.jpg" class="d-flex "> 
+                                        <div><span class="btn btn-danger " id="offer-btn">84% off</span><span class="text-danger">Great Indian Festival</span></div> 
+                                        <div><span>&#8377 79.00</span><br>  <span> Quace 12 meter decorative 42 warm.. </span></div>
+                                    </div>
+                                    <div class="slide-img-col col"><img src="https://m.media-amazon.com/images/I/71jU5XzQS4L._AC_SY400_.jpg" class="d-flex "> 
+                                        <div><span class="btn btn-danger " id="offer-btn">₹120 and under</span><span class="text-danger" >Great Indian Festival</span></div> 
+                                        <div>  <span>Amazing Product For Amazon Brand..</span></div>
+                               
+                                    </div>
+                                </div> 
+                            </div>
+                            
+            
+            
+                            <!--carousel buttons-->
+
+                            
+
+                            <button class="carousel-control-prev " data-bs-slide =" carousel" data-bs-target="#Nextbanner">
+                                <div class="border border-black border-1 p-1 h-25"><span class="carousel-control-prev-icon w-25 h-50 p-4 m-1 "></span></div>
+                            </button>
+                             <button class=" carousel-control-next " data-bs-slide =" carousel" data-bs-target="#Nextbanner" >
+                              <div class="border border-black border-1 p-1 h-25"><span class="carousel-control-next-icon  w-25 h-50 p-4 m-1"></span></div>
+                            </button>
+                    
+                   
+            
+                    <div  class="carousel-indicators " id="btn3">
+                               <button class="active btn btn-dark w-100 p-1 border rounded-3" data-bs-slide-to="0" data-bs-target="#Nextbanner"></button>
+                                <button class="btn btn-dark w-100 p-1 border rounded-3"  data-bs-slide-to="1" data-bs-target="#Nextbanner"></button>
+                                <button  class="btn btn-dark w-100 p-1 border rounded-3" data-bs-slide-to="2" data-bs-target="#Nextbanner"></button>
+                    </div>
+           
+        <!-- carousel slide end-->
+        
+               
+       
+
+
+
         </section>
-  
-       
         <footer class="container-fluid text-center">
             <div class="f1 row  text-white bg-black ">
-               <div class="col text-center"><span> back to top</span></div>
+               <div class="col "><span><a href="#top"> back to top</a></span></div>
             </div>
             <div class="f2 " >
                 <div class="row bg-dark text-white pt-3 d-flex ">  
@@ -427,15 +592,11 @@
             </div>
           </footer>  
             
-
-
-
-
-
-       
+    
         
 
     
-  
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>  
 </body>
 </html>
