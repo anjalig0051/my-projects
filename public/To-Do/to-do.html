@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        TableData=[];
+
+       function TableLoad(){
+        document.getElementById("tbody").innerHTML="";
+        document.getElementById("txtuser").value="";
+        document.getElementById("txtlstname").value="";
+        document.getElementById("txtcity").value="";
+        document.getElementById("txtmark").value="";
+        document.getElementById("txtmobile").value="";
+
+        TableData.map(function(item ,index){
+            var tr= document.createElement("tr");
+            tr.innerHTML=`
+            <tr class=" p-3 text-center">
+                <td>${index+1}</td>
+                <td id="name">${item.name}</td>
+                <td id="lstname">${item.lstname}</td>
+                <td id="city">${item.city}</td>
+                <td id="mark">${item.mark}</td>
+                <td id="mobile">${item.mobile}</td>
+                <td class="p-3">
+                    <button class="btn btn-danger" onclick="deleteData()">delete</button>
+                    <button class="btn btn-warning text-light" onclick="updateData(${index})">Update</button>
+                    <button class="btn btn-success "><a href="#addTodo" class="text-decoration-none text-light">Add Folder</a></button>
+                </td>
+            </tr>
+            `
+            document.getElementById("tbody").appendChild(tr);
+
+        })
+
+       }
+       function SubmitClick(){
+       var Name= document.getElementById("txtuser").value;
+       var Last= document.getElementById("txtlstname").value;
+        var City=document.getElementById("txtcity").value;
+        var Mark =document.getElementById("txtmark").value;
+       var Mobile=  document.getElementById("txtmobile").value;
+        var table= document.getElementById("container");
+     var  Data={
+            name:Name,
+            last:Last,
+            city:City,
+            mark:Mark,
+            mobile:Mobile
+       }
+     
+       TableData.push(Data);
+       TableLoad();
+       table.className="d-block ";
+       }
+
+       function updateData(index){
+        index.map(function (ite){
+           console.log(ite);
+        })
+       }
+
+       function deleteData(index){
+            var msg= confirm("ar you shore to delete ");
+            if(msg==true){
+                TableData.splice(index,1);
+                }
+            TableLoad();
+     
+       }
+    </script>
+
+
+    <style>
+        tr, th , td{
+            border: 2px solid black;
+            
+        }
+    </style>
+</head>
+<body class="container-fluid" onload="TableLoad()"  align="center">
+    <div class=" text-align-center d-flex justify-content-center" id="addTodo">
+        <div class="continer-fluid border border-1 p-5 mt-3">
+            <h2>to-do</h2>
+        <dl>
+            <dt>user name</dt>
+            <dd><input type="text" id="txtuser" name="name"></dd>
+            <dt>Last name</dt>
+            <dd><input  type="text" id="txtlstname" name="last"></dd>
+            <dt>City</dt>
+            <dd><input  type="text" id="txtcity" name="city"></dd>
+            <dt>marks</dt>
+            <dd><input type="number" id="txtmark" name="mark" pattern="/d{2}/"></dd>
+            <dt>Mobile</dt>
+            <dd><input  type="number" id="txtmobile" name="mobile" pattern="/\+91\d{10}/"></dd>
+        </dl>
+        <button onclick="SubmitClick()" class="btn btn-primary ">submit</button>
+        <p></p>
+        </div>
+    </div>
+
+    <div id="container"  class="d-none ">
+     <h2 >TO-DO LIST</h2>
+        <table width="100%"  frame="box" rules="all" >
+            
+            <thead>
+                <tr class="p-3 text-center ">
+                    <th>Index</th>
+                    <th>User Name</th>
+                    <th>Last Name</th>
+                    <th>City</th>
+                    <th>Mark</th>
+                    <th>Mobilr</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+   
+  
+</body>
+</html>
