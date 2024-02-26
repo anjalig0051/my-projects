@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        const scriptURL = "https://sheetdb.io/api/v1/ghhlswyxhakp8"
+  , form = document.forms["submit-to-google-sheet"]
+  , msg = document.getElementById("msg");
+function Paste() {
+    return alert("You cannot performing Paste"),
+    !1
+}
+form.addEventListener("submit", e=>{
+    e.preventDefault(),
+    fetch( "https://sheetdb.io/api/v1/ghhlswyxhakp8", {
+        method: "POST",
+        body: new FormData(form)
+    }).then(e=>{
+        msg.innerHTML = "Message Send Successfully",
+        msg.className = "bi bi-check-circle-fill",
+        setTimeout(function() {
+            msg.innerHTML = "",
+            msg.className = ""
+        }, 5e3),
+        form.reset()
+    }
+    ).catch(e=>console.error("Error!", e.message))
+}
+);
+
+    </script>
+</head>
+<body class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="p-3 bg-body-secondary mt-4">
+        <form class="submit-to-google-sheet" action="https://sheetdb.io/api/v1/ghhlswyxhakp8" method="post" >
+            <h2>send message</h2>
+        <dl>
+            <dt>Name</dt>
+            <dd><input type="text" class="form-control w-100 p-2" name="Name"></dd>
+            <dt>Email</dt>
+            <dd><input type="email" class="form-control w-100 p-2" name="Email"></dd>
+            <dt>Subject</dt>
+            <dd><input type="text" class="form-control w-100 p-2" name="Subject"></dd>
+            <dt>Message</dt>
+            <dd><textarea cols="40" row="8" class="form-control w-100 p-2" name="Message"></textarea></dd>
+        </dl>
+        <button class="btn btn-primary w-100 form-control" type="submit">Send</button>
+        <div>
+            <span id="msg"></span>
+        </div>
+        </form>
+    </div>
+</body>
+</html>

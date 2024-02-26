@@ -98,23 +98,48 @@
             })
         }
         function ShowCartClick(){
+            var total = 0;
             document.getElementById("cartBody").innerHTML = "";
             cartItems.map(function(item){
+                document.getElementById('total').innerHTML = "";
                 var tr = document.createElement("tr");
                 var tdTitle = document.createElement("td");
                 var tdPrice = document.createElement("td");
                 var tdPreview = document.createElement("td");
+                var total1 = document.createElement("td");
+
+                total += parseInt(item.price );
 
                 tdTitle.innerHTML = item.title;
-                tdPrice.innerHTML = item.price;
-                tdPreview.innerHTML = `<img src=${item.image} width="50" height="50">`;
+                tdPrice.innerHTML = "₹" + parseInt(item.price )
+
+           
+               
+             
+                tdPreview.innerHTML = `<div class="d-flex">
+                    <img src=${item.image} class="ms-3" width="50" height="50">
+                    <span onclick="Remove(${item.title, item.image, item.price})" class="bi bi-trash3-fill ms-3 text-danger"></span>
+               </div>`;
+               total1.innerHTML = `₹ ${total}`;
 
                 tr.appendChild(tdTitle);
                 tr.appendChild(tdPrice);
                 tr.appendChild(tdPreview);
 
                 document.getElementById("cartBody").appendChild(tr);
+                document.getElementById("total").appendChild(total1);
             })
+        }
+
+        function Remove(title) {
+            var app = title, image, price;
+            var index = cartItems.indexOf(app)
+            flag = confirm(`Are you sure you want to delete `)
+            if (flag == true) {
+                cartItems.splice(index, 1)
+                ShowCartClick(document.getElementById("total").innerHTML = " ")
+                GetCartItemsCount();
+            }
         }
     </script>
 </head>
@@ -151,6 +176,12 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div class="card-footer text-dark d-flex ms-3 me-4 "
+                        style="justify-content: space-between;">
+                        <h3>Total Price</h3>
+                        <h3 id="total"></h3>
+                    </div>
+
                     </div>
                 </div>
             </div>
