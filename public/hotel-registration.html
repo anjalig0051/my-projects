@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+    <script src="hotal.js"></script>
+   <style>
+      .input-form{
+        display: grid;
+        grid-template-columns: 3fr 9fr;
+      }
+      .input-form label,div{
+        margin-top: 15px;        
+      }
+      .input-form label{
+        font-weight: bold;
+      }
+   </style>
+   <script>
+    function RegisterClick(){
+    document.getElementById("lblName").innerHTML = document.getElementById("txtName").value;
+    document.getElementById("lblDate").innerHTML = document.getElementById("txtdate").value;
+    document.getElementById("lblDays").innerHTML = document.getElementById("txtdays").value;
+    document.getElementById("lblTotalPersion").innerHTML = document.getElementById("txtpersion").value;
+    document.getElementById("lblAdvancedAmount").innerHTML = document.getElementById("txtAdvanceAmount").value;
+
+    // Select Room Type Coding ------
+
+    var roomTypeName = ''
+    var roomTypeCost = 0;
+
+    var DelexRoom = document.getElementById("txtdelex");
+    var SuiteRoom = document.getElementById("txtsuite");
+
+    var photo = document.getElementById("img")
+
+    if(DelexRoom.checked)
+    {
+        roomTypeName = DelexRoom.value
+        roomTypeCost = 2500;
+        photo.src = "../src/DelexRoom.jpeg";
+    }
+
+    if(SuiteRoom.checked)
+    {
+        roomTypeName = SuiteRoom.value;
+        roomTypeCost = 4000;
+        photo.src = "../src/suiteRoom.jpeg";
+    }
+
+   
+    // Select Aminties
+
+    var selectAmentiesName = '';
+    var selectAmentiesNameCost = 0;
+
+    var acType = document.getElementById("txtac");
+    var lockerType = document.getElementById("txtlocker");
+
+
+    if(acType.checked)
+    {
+        selectAmentiesName += acType.value + "<br>";
+        selectAmentiesNameCost = 1000;
+        roomTypeCost += selectAmentiesNameCost
+    }
+   
+    if(lockerType.checked)
+    {
+        selectAmentiesName += lockerType.value;
+        selectAmentiesNameCost = 300;
+        roomTypeCost += selectAmentiesNameCost;
+        alert(`room type :- ${selectAmentiesName} <br> total cost: -${roomTypeCost}`);
+    }
+     
+    // calcultion
+
+    var days = document.getElementById("txtdays").value;
+    var pepole = document.getElementById("txtpersion").value;
+    var advance =  document.getElementById("txtAdvanceAmount").value;
+
+    var totalPepole = pepole-2;
+    var total = 0;
+    var totalBalance = 0;
+    if(pepole>2)
+    {
+        total += (roomTypeCost*days)+totalPepole*1000;
+        totalBalance = total-advance;      
+    }
+    else{
+        total+=roomTypeCost*days;
+        totalBalance = total-advance;
+        alert(total)
+    }
+   
+    document.getElementById("lbltotal").innerHTML = totalBalance;
+
+}
+   
+   </script>
+</head>
+<body class="container-fluid ">
+   <header  class="bg-warning">
+    <h1>Hotel Taj.</h1>
+    <ul class="nav nav-tabs">
+        <li class="nav-item"><a href="#details" data-bs-toggle="tab" class="nav-link active">Customer Info</a></li>
+        <li class="nav-item"><a href="#preview" data-bs-toggle="tab" class="nav-link">Select Room Type</a></li>
+        <li class="nav-item"><a href="#features" data-bs-toggle="tab" class="nav-link">Select Amenities</a></li>
+        <li class="nav-item"><a href="#ratings" data-bs-toggle="tab" class="nav-link">Advance Amount</a></li>
+        <li class="nav-item"><a href="#result" data-bs-toggle="tab" class="nav-link" >Result</a></li>
+    </ul>
+   </header>
+   <section  class="bg-secondary">
+    <div class="tab-content mt-4 p-4 ">
+        <div class="tab-pane active" id="details">
+            <div class="input-form">
+                <label for="" class="form-label"> Customer Name </label>
+                <div>
+                    <input type="text" id="txtName" class="form-control">
+                </div>
+            </div>
+            <!-- one informaion -->
+            <div class="input-form">
+                <label for="" class="form-label"> check Date </label>
+                <div>
+                    <input type="date" id="txtdate" class="form-control">
+                </div>
+            </div>
+            <!-- two informaion -->
+            <div class="input-form">
+                <label for="" class="form-label"> Total Number of Days </label>
+                <div>
+                    <input type="number" id="txtdays" class="form-control">
+                </div>
+            </div>
+            <!-- three informaion -->
+            <div class="input-form">
+                <label for="" class="form-label"> Total Number of Persion </label>
+                <div>
+                    <input type="number" id="txtpersion" class="form-control">
+                </div>
+            </div>
+            <!-- three informaion -->
+            <button class="btn btn-secondary"><a href="#preview">Next-></a></button>
+        </div>
+
+        <!-- *******Select Room Type Coding ********** -->
+
+        <div class="tab-pane" id="preview">
+            <div class="row">
+                 <div class="col-6">
+                        <img src="https://tse2.mm.bing.net/th?id=OIP.6NLV16bzAw5tAwKdmk8JmgHaE8&pid=Api&P=0&h=180" alt="" style="height: 300px;width: 300px;">
+                        <div>
+                            <input type="radio" name="roomType" id="txtdelex" value="Delux Room" class="form-check-input" style="font-size: 30px;">
+                             <span style="font-size: 30px; font-weight: bold;"> Delux Room &#8377;2500/-</span>
+                        </div>
+                 </div>
+                 <div class="col-6">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.lO0gI5U0wBZMJZMv7UFlZwHaE7&pid=Api&P=0&h=180" alt="" style="height: 300px;width: 300px;">
+                    <div>
+                        <input type="radio" name="roomType" id="txtsuite" value="Suite Room" class="form-check-input" style="font-size: 30px;">
+                         <span style="font-size: 30px; font-weight: bold;"> Suite  Room &#8377;4000/-</span>
+                    </div>
+             </div>
+            </div>
+        </div>
+
+        <!--*********** Select Amentities ************** -->
+
+        <div class="tab-pane" id="features">
+            <div class="row">
+                <div class="col-6">
+                       <img src="https://tse3.mm.bing.net/th?id=OIP.r8rEpcrkBWWfT6UYlmgRkQHaE7&pid=Api&P=0&h=180" alt="" style="height: 300px;width: 300px;">
+                       <div>
+                           <input type="checkbox"  id="txtac" value="AC" class="form-check-input" style="font-size: 30px;">
+                            <span style="font-size: 30px; font-weight: bold;"> AC &#8377;1000/-</span>
+                       </div>
+                </div>
+                <div class="col-6">
+                   <img src="https://tse2.mm.bing.net/th?id=OIP.Ipg_BghMUfHFQxZMUHA06QHaE6&pid=Api&P=0&h=180" alt="" style="height: 300px;width: 300px;">
+                   <div>
+                       <input type="checkbox"  id="txtlocker" value="Locker" class="form-check-input" style="font-size: 30px;">
+                        <span style="font-size: 30px; font-weight: bold;"> Locker &#8377;300/- </span>
+                   </div>
+            </div>
+           </div>
+        </div>
+        <!--************ Advanced Amount ********** -->
+        <div class="tab-pane" id="ratings">            
+            <div class="input-form">
+                <label for="" class="form-label"> Advance Amount </label>
+                <div>
+                    <input type="number" id="txtAdvanceAmount" class="form-control w-25">
+                </div>
+            </div>
+              <div>
+                   <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#login" onclick="RegisterClick()"> Register</button>
+                   
+              </div>
+        </div>
+
+        <!--********* Modal *********** -->
+        <div class="modal" id="login">
+            <div class="modal-dialog">
+              <div class="modal-content">
+               <div class="modal-header">
+                <h4> Total Bill Recipt </h4>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+               </div>
+               <div class="modal-body">
+                  <div class="row">
+                    <div class="col-8">
+                        <dl style="display: grid;grid-template-columns: 8fr 4fr;">
+                            <dt> Customer Name </dt>
+                            <dd id="lblName"> </dd>
+                            <dt> check Date </dt>
+                            <dd id="lblDate"></dd>
+                            <dt> Total Number of Days</dt>
+                            <dd id="lblDays"></dd>
+                            <dt> Total Number of Persion</dt>
+                            <dd id="lblTotalPersion"> </dd>
+                            <dt> Advanced Amount </dt>
+                            <dd id="lblAdvancedAmount"> </dd>
+                            <dt> Total </dt>
+                            <dd id="lbltotal"> </dd>
+                         </dl>
+                    </div>
+                    <div class="col-4">
+                        <img alt="" id="img" height="200px" width="100%">
+                    </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button class="btn btn-primary">Submit</button>
+                  <button class="btn btn-danger" data-bs-dismiss="modal">Cancle</button>
+               </div>
+              </div>
+           </div>
+          </div>
+
+        <!-- ***** Preview of Result ******** -->
+        <div class="tab-pane" id="result">            
+             <dl>
+                <dt> Customer Name </dt>
+                <dd id="lblName"> </dd>
+                <dt> check Date </dt>
+                <dd id="lblDate"></dd>
+                <dt> Total Number of Days</dt>
+                <dd id="lblDays"></dd>
+                <dt> Total Number of Persion</dt>
+                <dd id="lblTotalPersion"> </dd>
+                <dt> Advanced Amount </dt>
+                <dd id="lblAdvancedAmount"> </dd>
+             </dl>
+        </div>
+    </div>
+   </section>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
